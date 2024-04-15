@@ -5,6 +5,9 @@
 //  Created by Henrieke Baunack on 3/9/24.
 //
 
+// Link to tutorial with documents directory
+//https://www.hackingwithswift.com/books/ios-swiftui/writing-data-to-the-documents-directory
+
 import SwiftUI
 
 extension View {
