@@ -174,13 +174,17 @@ struct ContentView: View {
     }
     
     func loadData(){
-        if let data = UserDefaults.standard.data(forKey: "Cards"){
+        let url = URL.documentsDirectory.appending(path: "cards.txt")
+        do {
+            let data = try Data(contentsOf: url)
             if let decoded = try? JSONDecoder().decode([Card].self, from: data){
                 cards = decoded
             }
         }
-    }
-}
+        catch {
+            print("there was an error reading from the documents directory")
+        }
+    }}
 
 #Preview {
     ContentView()
